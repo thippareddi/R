@@ -29,6 +29,13 @@ print(gmat_tpc_max )
  barplot(Gmat_tpc)
  pie(Gmat_tpc,"TPC")
 hist(Gmat_tpc,xlab = "Histogram",col = "yellow",border = "blue")
+
+# plot a cumulative histogram of y
+hist(Gmat_tpc) -> h 
+h$counts <- cumsum(h$counts) 
+plot( h ) 
+
+
  dev.off()
  feq <-table(Gmat_tpc)
 
