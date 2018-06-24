@@ -6,9 +6,23 @@ Gmat_tpc <- MyData$gmat_tpc
 work_yrs<- MyData$work_yrs
 
 #gmat_tpc
+
 gmat_tpc_max <- max(Gmat_tpc)
+print(gmat_tpc_max )
  gmat_tpc_mean <- mean(Gmat_tpc)
+ print(gmat_tpc_mean)
+ gmat_tpc_median<-median(Gmat_tpc)
+ print(gmat_tpc_median)
+ # Create the function.
+ getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+ }
  
+ 
+ gmat_tpc_mode<-getmode(Gmat_tpc)
+ print(gmat_tpc_mode)
+
  # Give the chart file a name
  png(file = "gmat_tpc.png")
  # Plot the bar chart 
