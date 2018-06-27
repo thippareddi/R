@@ -5,6 +5,15 @@ MyData <- read.csv(file="D:\\R\\Weekday_DataScience-master\\MBA Starting Salarie
 Gmat_tpc <- MyData$gmat_tpc
 work_yrs<- MyData$work_yrs
 
+x <- MyData$gmat_tpc
+Freq <- table(x)
+relFreq <- prop.table(Freq)
+Cumulative_Freq <- cumsum(Freq)
+Cumulative_Relative_Freq <- cumsum(relFreq)
+data.frame(xval = names(Freq), Freq=Freq, relFreq=relFreq, 
+           Cumulative_Freq=Cumulative_Freq, 
+           Cumulative_Relative_Freq=Cumulative_Relative_Freq)
+
 #gmat_tpc
 
 gmat_tpc_max <- max(Gmat_tpc)
